@@ -1,0 +1,50 @@
+import icone1 from "@/assets/ICONE_1.png";
+import icone2 from "@/assets/ICONE_2.png";
+import icone3 from "@/assets/ICONE_3.png";
+import icone4 from "@/assets/ICONE_4.png";
+import icone5 from "@/assets/ICONE_5.png";
+import icone6 from "@/assets/ICONE_6.png";
+
+const items = [
+  { icon: icone1, title: "DESEJOS E NECESSIDADES", desc: "Dr. Lourival Carvalho constrói com você um plano sob medida, capaz de atender aos seus desejos e necessidades, buscando resultados naturais e duradouros." },
+  { icon: icone2, title: "ACOMPANHAMENTO PESSOAL", desc: "Nossa equipe é treinada e capacitada para acompanhar todo o seu processo cirúrgico, esclarecendo dúvidas, organizando cronogramas e facilitando a preparação de acordo com a sua realidade." },
+  { icon: icone3, title: "PREPARAÇÃO PRÉ-OPERATÓRIA", desc: "Preparação completa no pré-operatório para que seu procedimento ocorra com segurança e o resultado esteja alinhado ao que você espera." },
+  { icon: icone4, title: "TECNOLOGIA DE PONTA", desc: "Aplicação de tecnologias de ponta por um profissional qualificado, capaz de extrair o melhor da inovação e proporcionar resultados naturais, seguros e duradouros." },
+  { icon: icone5, title: "SUPORTE PÓS-OPERATÓRIO", desc: "Atuação da equipe LC no pós-operatório, com acompanhamento de fisioterapia, atendimentos home care para retirada de drenos e protocolos com nutrólogos para manutenção dos resultados." },
+  { icon: icone6, title: "RETORNO DE LONGO PRAZO", desc: "Nossos procedimentos são planejados para resultados duradouros. O médico acompanha sua evolução com retornos após 3 e 6 meses e, posteriormente, anuais." },
+];
+
+const Experiencia = () => {
+  return (
+    <section id="experiencia" className="py-20 lg:py-32 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl text-foreground">
+            SUA EXPERIÊNCIA SERÁ <span className="font-bold">ULTRA PERSONALIZADA</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {items.map((item, i) => (
+            <div key={i} className="bg-card border border-border rounded-lg p-8 text-center hover:border-primary/30 transition-colors">
+              <img src={item.icon} alt={item.title} className="w-24 h-24 mx-auto mb-6 object-contain" />
+              <h3 className="font-montserrat text-sm text-primary mb-3 font-bold uppercase tracking-wider">{item.title}</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="#contato"
+            className="inline-block bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-4 hover:opacity-90 transition-all font-bold"
+          >
+            MARQUE SUA <span>CONSULTA</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experiencia;
