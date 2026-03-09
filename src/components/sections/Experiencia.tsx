@@ -4,6 +4,7 @@ import icone3 from "@/assets/ICONE_3.png";
 import icone4 from "@/assets/ICONE_4.png";
 import icone5 from "@/assets/ICONE_5.png";
 import icone6 from "@/assets/ICONE_6.png";
+import GlareHover from "@/components/ui/GlareHover";
 
 const items = [
   { icon: icone1, title: "DESEJOS E NECESSIDADES", desc: "Dr. Lourival Carvalho constrói com você um plano sob medida, capaz de atender aos seus desejos e necessidades, buscando resultados naturais e duradouros." },
@@ -26,11 +27,20 @@ const Experiencia = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item, i) => (
-            <div key={i} className="bg-card border border-border rounded-lg p-8 text-center hover:border-primary/30 transition-colors">
-              <img src={item.icon} alt={item.title} className="w-24 h-24 mx-auto mb-6 object-contain" />
-              <h3 className="font-montserrat text-sm text-primary mb-3 font-bold uppercase tracking-wider">{item.title}</h3>
-              <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
-            </div>
+            <GlareHover
+              key={i}
+              glareColor="#f5e4ae"
+              glareOpacity={0.5}
+              glareSize={500}
+              transitionDuration={1100}
+              borderRadius="8px"
+            >
+              <div className="bg-card border border-border rounded-lg p-8 text-center hover:border-primary/30 transition-colors w-full h-full">
+                <img src={item.icon} alt={item.title} className="w-24 h-24 mx-auto mb-6 object-contain" />
+                <h3 className="font-montserrat text-sm text-primary mb-3 font-bold uppercase tracking-wider">{item.title}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            </GlareHover>
           ))}
         </div>
 
