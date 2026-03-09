@@ -1,7 +1,6 @@
 import { useState } from "react";
 import fotoClinica1 from "@/assets/foto-clinica1.png";
 import fotoClinica2 from "@/assets/foto-clinica2.png";
-import fotoMapa from "@/assets/foto-mapa.png";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const Contato = () => {
@@ -35,7 +34,16 @@ const Contato = () => {
 
           {/* Map */}
           <div className="rounded-lg overflow-hidden" style={{ aspectRatio: '668/691' }}>
-            <img src={fotoMapa} alt="Localização da Clínica" className="w-full h-full object-cover" />
+            <iframe
+              src="https://maps.google.com/maps?q=RioMar+Trade+Center+5,+Avenida+Rep%C3%BAblica+do+L%C3%ADbano,+256,+sala+720,+Pina,+Recife,+PE,+51110-160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização da Clínica Dr. Lourival Carvalho"
+            />
           </div>
 
           {/* Contact form */}
@@ -78,7 +86,7 @@ const Contato = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
