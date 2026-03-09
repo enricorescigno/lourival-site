@@ -31,19 +31,22 @@ const Contato = () => {
               <img src={fotoClinica2} alt="Clínica Dr. Lourival Carvalho" className="w-full h-full object-cover" />
             </div>
           </div>
-
-          {/* Map */}
-          <div className="rounded-lg overflow-hidden" style={{ aspectRatio: '668/691' }}>
-            <iframe
-              src="https://maps.google.com/maps?q=RioMar+Trade+Center+5,+Avenida+Rep%C3%BAblica+do+L%C3%ADbano,+256,+sala+720,+Pina,+Recife,+PE,+51110-160&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Localização da Clínica Dr. Lourival Carvalho"
-            />
+          <div className="flex flex-col gap-2">
+            <div className="rounded-lg overflow-hidden flex-1" style={{ aspectRatio: '668/691' }}>
+              <iframe
+                src="https://maps.google.com/maps?q=RioMar+Trade+Center+5,+Avenida+Rep%C3%BAblica+do+L%C3%ADbano,+256,+sala+720,+Pina,+Recife,+PE,+51110-160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização da Clínica Dr. Lourival Carvalho"
+              />
+            </div>
+            <p className="text-muted-foreground text-xs leading-relaxed mt-2">
+              RioMar Trade Center 5 - Avenida República do Líbano, 256 - sala 720 - Pina, Recife - PE, 51110-160
+            </p>
           </div>
 
           {/* Contact form */}

@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen bg-background overflow-hidden">
       {/* Doctor image - anchored to bottom-right like a background element */}
-      <div className="hidden lg:block absolute right-0 top-0 bottom-[-10%] w-[80vw] pointer-events-none">
+      <div className="hidden lg:block absolute right-0 top-0 bottom-[-10%] w-[65vw] pointer-events-none">
         <img
           src={fotoDoutor}
           alt="Dr. Lourival Carvalho - Cirurgião Plástico"
