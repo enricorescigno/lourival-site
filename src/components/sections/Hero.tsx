@@ -1,4 +1,5 @@
 import fotoDoutor from "@/assets/FOTO_LAUDA_1.png";
+import GradientText from "@/components/ui/GradientText";
 
 const Hero = () => {
   return (
@@ -17,7 +18,17 @@ const Hero = () => {
         <div className="w-full lg:w-1/2 lg:pr-12">
           <h1 className="font-playfair text-2xl sm:text-3xl lg:text-[32px] lg:leading-[1.3] mb-6">
             <span className="text-foreground">SUA CHANCE DE ALCANÇAR A </span>
-            <span className="text-primary font-bold">VERSÃO IDEAL</span>
+            <GradientText
+              colors={["#F5E4AE", "#B3936C", "#A0A0A0"]}
+              animationSpeed={5}
+              direction="horizontal"
+              yoyo={true}
+              pauseOnHover={false}
+              showBorder={false}
+              className="font-bold"
+            >
+              VERSÃO IDEAL
+            </GradientText>
             <span className="text-foreground"> DO SEU CORPO</span>
           </h1>
           <p className="text-muted-foreground text-lg mb-8 max-w-lg leading-relaxed">
