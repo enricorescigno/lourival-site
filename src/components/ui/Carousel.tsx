@@ -64,7 +64,7 @@ export default function Carousel({
   pauseOnHover?: boolean;
   loop?: boolean;
 }) {
-  const containerPadding = 8;
+  const containerPadding = 0;
   const itemWidth = baseWidth - containerPadding * 2;
   const trackItemOffset = itemWidth + GAP;
 
@@ -215,7 +215,7 @@ export default function Carousel({
     <div
       ref={containerRef}
       className="carousel-container"
-      style={{ width: '100%', maxWidth: `${baseWidth}px` }}
+      style={{ width: '100%' }}
     >
       <motion.div
         className="carousel-track"
