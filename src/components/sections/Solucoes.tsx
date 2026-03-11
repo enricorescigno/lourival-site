@@ -45,6 +45,21 @@ const solucoes = [
 ];
 
 const Solucoes = () => {
+  const scrollToSection = (sectionId: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section id="solucoes" className="py-20 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,9 +93,10 @@ const Solucoes = () => {
                 </ul>
                 <a
                   href="#contato"
+                  onClick={scrollToSection("contato")}
                   className="mt-auto inline-flex items-center justify-center min-h-[44px] text-center rounded-md bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-xs uppercase tracking-wider px-4 py-3 hover:opacity-90 transition-all font-bold"
                 >
-                  EU QUERO ESTA <span>SOLUÇÃO</span>
+                  EU QUERO ESTA SOLUÇÃO
                 </a>
               </div>
             </div>
