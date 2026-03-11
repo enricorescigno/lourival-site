@@ -66,13 +66,24 @@ const Contato = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Falha ao enviar o formulário");
+        const errorData = await response.text().catch(() => "Nenhuma resposta do servidor");
+        throw new Error(`Servidor respondeu com erro ${response.status}: ${errorData}`);
       }
 
       console.log("Formulário enviado com sucesso!");
-    } catch (error) {
-      console.error("Erro ao enviar:", error);
-      // Opcional: alert("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+    } catch (error: any) {
+      console.error("Erro detalhado ao enviar:", error);
+
+      let userMessage = "Ocorreu um erro ao enviar sua mensagem.";
+      if (error.message.includes("Failed to fetch")) {
+        userMessage += "\n\nPossível erro de conexão ou CORS. Verifique se o n8n permite requisições deste domínio.";
+      } else if (error.message.includes("404")) {
+        userMessage += "\n\nWebhook não encontrado (404). Verifique se o link está correto e o workflow está Ativo.";
+      } else {
+        userMessage += `\n\nDetalhe: ${error.message}`;
+      }
+
+      alert(userMessage);
     } finally {
       setIsSubmitting(false);
     }
