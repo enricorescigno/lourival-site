@@ -1,4 +1,5 @@
 import logoSlogan from "@/assets/Logo_Lourival_Carvalho_Com_Slogan.png";
+import logo from "@/assets/Logo_Lourival_Carvalho.png";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -9,7 +10,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         <a href="#hero">
-          <img src={logoSlogan} alt="Dr. Lourival Carvalho" className="h-8 sm:h-10" />
+          <img src={logoSlogan} alt="Dr. Lourival Carvalho" className="h-8 sm:h-10 lg:hidden" />
+          <img src={logo} alt="Dr. Lourival Carvalho" className="hidden lg:block h-8 sm:h-10" />
         </a>
 
         <div className="hidden lg:flex items-center gap-6">
