@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import fotoClinica1 from "@/assets/foto-clinica1.png";
 import fotoClinica2 from "@/assets/foto-clinica2.png";
 import Stepper, { Step } from "@/components/ui/Stepper";
@@ -9,12 +9,26 @@ import img3 from "@/assets/carrossel3.jpg";
 import img4 from "@/assets/carrossel4.jpg";
 import img5 from "@/assets/carrossel5.jpg";
 
-const carouselItems = [
+import m1 from "@/assets/carrosselmobile1.jpg";
+import m2 from "@/assets/carrosselmobile2.jpg";
+import m3 from "@/assets/carrosselmobile3.jpg";
+import m4 from "@/assets/carrosselmobile4.jpg";
+import m5 from "@/assets/carrosselmobile5.jpg";
+
+const desktopCarouselItems = [
   { id: 1, image: img1, title: "Clínica 1" },
   { id: 2, image: img2, title: "Clínica 2" },
   { id: 3, image: img3, title: "Clínica 3" },
   { id: 4, image: img4, title: "Clínica 4" },
   { id: 5, image: img5, title: "Clínica 5" },
+];
+
+const mobileCarouselItems = [
+  { id: 1, image: m1, title: "Clínica 1" },
+  { id: 2, image: m2, title: "Clínica 2" },
+  { id: 3, image: m3, title: "Clínica 3" },
+  { id: 4, image: m4, title: "Clínica 4" },
+  { id: 5, image: m5, title: "Clínica 5" },
 ];
 
 const Contato = () => {
@@ -23,6 +37,15 @@ const Contato = () => {
   const [whatsapp, setWhatsapp] = useState("");
   const [procedimento, setProcedimento] = useState("");
   const [mensagem, setMensagem] = useState("");
+  const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 1024 : false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const currentItems = isMobile ? mobileCarouselItems : desktopCarouselItems;
 
   return (
     <section id="contato" className="py-20 lg:py-32 bg-background">
@@ -68,8 +91,8 @@ const Contato = () => {
           <div className="order-3 lg:order-none flex flex-col h-full gap-4 overflow-hidden">
             <div className="rounded-lg overflow-hidden h-[200px] lg:h-auto lg:flex-[3]">
               <Carousel
-                items={carouselItems}
-                baseWidth={window.innerWidth < 1024 ? window.innerWidth - 32 : 600}
+                items={currentItems}
+                baseWidth={isMobile ? window.innerWidth - 32 : 600}
                 autoplay
                 autoplayDelay={3000}
                 pauseOnHover={false}
