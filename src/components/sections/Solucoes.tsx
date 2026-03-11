@@ -54,9 +54,9 @@ const Solucoes = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 md:px-0 md:mx-0 scrollbar-hide">
           {solucoes.map((s, i) => (
-            <div key={i} className="bg-card border border-border rounded-lg overflow-hidden group hover:border-primary/30 transition-colors flex flex-col">
+            <div key={i} className="min-w-[85%] sm:min-w-[45%] md:min-w-0 snap-center bg-card border border-border rounded-lg overflow-hidden group hover:border-primary/30 transition-colors flex flex-col mr-4 md:mr-0 last:mr-0">
               <div className="h-48 sm:aspect-[4/3] lg:aspect-video overflow-hidden">
                 <img
                   src={s.image}

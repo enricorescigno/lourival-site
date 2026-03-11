@@ -82,7 +82,20 @@
   }
 
   .text-fluid-small {
-    font-size: clamp(0.75rem, 0.71rem + 0.2vw, 0.875rem);
+    font-size: clamp(0.75rem, 0.7rem + 0.21vw, 0.875rem);
     /* 12px - 14px */
+  }
+
+  /* Utility for hiding scrollbar in mobile carousels */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
   }
 }

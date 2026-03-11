@@ -33,9 +33,9 @@ const Depoimentos = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 md:px-0 md:mx-0 scrollbar-hide">
           {depoimentos.map((d, i) => (
-            <div key={i} className="bg-white border border-border rounded-lg overflow-hidden flex flex-col">
+            <div key={i} className="min-w-[85%] sm:min-w-[45%] md:min-w-0 snap-center bg-white border border-border rounded-lg overflow-hidden flex flex-col mr-4 md:mr-0 last:mr-0">
               <div className="aspect-video bg-neutral-900 flex items-center justify-center relative overflow-hidden">
                 {d.antes && d.depois ? (
                   <>
