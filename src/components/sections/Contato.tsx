@@ -29,55 +29,54 @@ const Contato = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-4">Localização</p>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl text-foreground">
+          <h2 className="font-playfair text-fluid-h2 text-foreground">
             VENHA NOS <span className="text-primary">CONHECER</span>
           </h2>
         </div>
 
-        {/* Grid with fixed height — all columns align at bottom */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.5fr_1.5fr] gap-4 lg:h-[650px]">
-          {/* Left: Clinic photos — defines the height */}
-          <div className="flex flex-col gap-4 h-full">
-            <div className="rounded-lg overflow-hidden flex-[3]">
-              <img src={fotoClinica1} alt="Clínica Dr. Lourival Carvalho" className="w-full h-full object-cover" />
+        {/* Grid with fluid height on mobile, fixed layout on desktop */}
+        <div className="flex flex-col lg:grid lg:grid-cols-[1fr_2.5fr_1.5fr] gap-4 lg:min-h-[650px]">
+          {/* Item 1 (Mobile Order 2): Clinic photos */}
+          <div className="order-2 lg:order-none grid grid-cols-2 lg:flex lg:flex-col gap-4 h-[150px] lg:h-full lg:flex-1">
+            <div className="rounded-lg overflow-hidden lg:flex-[3]">
+              <img src={fotoClinica1} alt="Clínica Dr. Lourival Carvalho" className="w-full h-full object-cover" loading="lazy" />
             </div>
-            <div className="rounded-lg overflow-hidden flex-[2]">
-              <img src={fotoClinica2} alt="Clínica Dr. Lourival Carvalho" className="w-full h-full object-cover" />
+            <div className="rounded-lg overflow-hidden lg:flex-[2]">
+              <img src={fotoClinica2} alt="Clínica Dr. Lourival Carvalho" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
 
-          {/* Center: Map — stretches to fill height */}
-          <div className="flex flex-col gap-2 h-full">
-            <div className="rounded-lg overflow-hidden flex-1">
+          {/* Item 2 (Mobile Order 1): Map */}
+          <div className="order-1 lg:order-none flex flex-col gap-2 h-[300px] lg:h-full lg:flex-1">
+            <div className="rounded-lg overflow-hidden flex-1 relative w-full h-full">
               <iframe
                 src="https://maps.google.com/maps?q=RioMar+Trade+Center+5,+Avenida+Rep%C3%BAblica+do+L%C3%ADbano,+256,+sala+720,+Pina,+Recife,+PE,+51110-160&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
+                className="absolute top-0 left-0 w-full h-full border-0"
+                style={{ filter: 'invert(90%) hue-rotate(180deg)' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Localização da Clínica Dr. Lourival Carvalho"
               />
             </div>
-            <p className="text-muted-foreground text-xs leading-relaxed">
+            <p className="text-muted-foreground text-xs leading-relaxed hidden lg:block">
               RioMar Trade Center 5 - Avenida República do Líbano, 256 - sala 720 - Pina, Recife - PE, 51110-160
             </p>
           </div>
 
-          {/* Right: Carousel + Stepper — mirrors left column proportions */}
-          <div className="flex flex-col h-full gap-4 overflow-hidden">
-            <div className="flex-[3] rounded-lg overflow-hidden">
+          {/* Item 3 (Mobile Order 3): Carousel + Stepper */}
+          <div className="order-3 lg:order-none flex flex-col h-full gap-4 overflow-hidden">
+            <div className="rounded-lg overflow-hidden h-[200px] lg:h-auto lg:flex-[3]">
               <Carousel
                 items={carouselItems}
-                baseWidth={600}
+                baseWidth={window.innerWidth < 1024 ? window.innerWidth - 32 : 600}
                 autoplay
                 autoplayDelay={3000}
                 pauseOnHover={false}
                 loop
               />
             </div>
-            <div className="flex-[2] overflow-hidden">
+            <div className="overflow-hidden min-h-[300px] lg:h-auto lg:flex-[2]">
               <Stepper
                 initialStep={1}
                 onStepChange={(step) => console.log("Step:", step)}

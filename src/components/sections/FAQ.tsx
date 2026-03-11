@@ -34,8 +34,8 @@ const FAQ = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left */}
           <div className="flex flex-col items-center lg:items-start justify-center">
-            <img src={logo} alt="Dr. Lourival Carvalho" className="w-40 mb-14" />
-            <h2 className="font-playfair text-4xl sm:text-5xl lg:text-6xl text-foreground text-center lg:text-left leading-tight">
+            <img src={logo} alt="Dr. Lourival Carvalho" className="hidden lg:block w-40 mb-14" />
+            <h2 className="font-playfair text-fluid-h2 text-foreground text-center lg:text-left leading-tight">
               <span className="font-bold">DÚVIDAS</span>
               <br />
               QUE VOCÊ

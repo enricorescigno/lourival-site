@@ -1,4 +1,5 @@
 import LogoLoop from "@/components/ui/LogoLoop";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const diferenciais = [
   { text: "ESPECIALISTA", boldText: "NACIONAL" },
@@ -8,12 +9,14 @@ const diferenciais = [
 ];
 
 const Diferenciais = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className="py-8 border-y border-border bg-[#A0A0A0]">
       <div className="max-w-7xl mx-auto">
         <LogoLoop
           items={diferenciais}
-          speed={50}
+          speed={isMobile ? 25 : 50}
           direction="left"
           hoverSpeed={0}
           gap={60}

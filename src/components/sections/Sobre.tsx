@@ -10,19 +10,20 @@ const Sobre = () => {
             <img
               src={imagemSobre}
               alt="Dr. Lourival Carvalho - Sobre"
-              className="w-full rounded-lg"
+              className="w-full h-[40vh] lg:h-auto object-cover object-top rounded-lg"
+              loading="lazy"
             />
           </div>
 
           {/* Right - Text */}
           <div>
-            <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl text-foreground mb-2">
+            <h2 className="font-playfair text-fluid-h2 text-foreground mb-2">
               SOBRE
             </h2>
-            <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl text-foreground mb-8 font-bold">
+            <h2 className="font-playfair text-fluid-h2 text-foreground mb-8 font-bold">
               LOURIVAL CARVALHO
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-sm">
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-fluid-body">
               <p>
                 Lourival Carvalho é Cirurgião Plástico brasileiro, com atuação especializada em Contorno Corporal, LipoHD e Cirurgias Mamárias.
               </p>
@@ -38,7 +39,7 @@ const Sobre = () => {
             </div>
             <a
               href="#contato"
-              className="inline-block mt-8 rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-4 hover:opacity-90 transition-all font-bold"
+              className="inline-block mt-8 w-full lg:w-auto text-center rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-4 hover:opacity-90 transition-all font-bold"
             >
               MARQUE SUA <span>CONSULTA</span>
             </a>

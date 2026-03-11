@@ -3,20 +3,11 @@ import GradientText from "@/components/ui/GradientText";
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen bg-background overflow-hidden">
-      {/* Doctor image - anchored to bottom-right like a background element */}
-      <div className="hidden lg:block absolute right-0 top-0 bottom-[-10%] w-[65vw] pointer-events-none">
-        <img
-          src={fotoDoutor}
-          alt="Dr. Lourival Carvalho - Cirurgião Plástico"
-          className="w-full h-full object-cover object-[30%_20%]"
-        />
-      </div>
-
+    <section id="hero" className="relative min-h-screen bg-background overflow-hidden flex flex-col lg:block">
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-h-screen flex items-center pt-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex items-center pt-28 lg:pt-20 lg:min-h-screen">
         <div className="w-full lg:w-1/2 lg:pr-12">
-          <h1 className="font-playfair text-2xl sm:text-3xl lg:text-[32px] lg:leading-[1.3] mb-6">
+          <h1 className="font-playfair text-fluid-h1 lg:leading-[1.3] mb-6">
             <span className="text-foreground">SUA CHANCE DE ALCANÇAR A </span>
             <GradientText
               colors={["#F5E4AE", "#B3936C", "#A0A0A0"]}
@@ -31,29 +22,32 @@ const Hero = () => {
             </GradientText>
             <span className="text-foreground"> DO SEU CORPO</span>
           </h1>
-          <p className="text-muted-foreground text-lg mb-8 max-w-lg leading-relaxed">
+          <p className="text-muted-foreground text-fluid-body mb-8 max-w-lg leading-relaxed">
             Cuidado completo e acompanhamento personalizado para alcançar resultados naturais e duradouros, elevando sua autoestima e qualidade de vida.
           </p>
           <a
             href="#contato"
-            className="inline-block rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-4 hover:opacity-90 transition-all font-bold"
+            className="inline-block w-full lg:w-auto text-center rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-4 hover:opacity-90 transition-all font-bold"
           >
             MARQUE SUA <span>CONSULTA</span>
           </a>
-          <div className="mt-10 border-t border-border pt-6">
-            <p className="font-playfair text-xl text-foreground font-bold">Dr. Lourival Carvalho</p>
-            <p className="text-muted-foreground text-sm uppercase tracking-wider">Cirurgião Plástico Especialista</p>
+          <div className="mt-10 border-t border-border pt-6 pb-8 lg:pb-0">
+            <p className="font-playfair text-fluid-h3 text-foreground font-bold">Dr. Lourival Carvalho</p>
+            <p className="text-muted-foreground text-fluid-small uppercase tracking-wider">Cirurgião Plástico Especialista</p>
           </div>
         </div>
+      </div>
 
-        {/* Mobile image */}
-        <div className="lg:hidden flex justify-center mt-8">
-          <img
-            src={fotoDoutor}
-            alt="Dr. Lourival Carvalho - Cirurgião Plástico"
-            className="w-full max-w-md object-contain"
-          />
-        </div>
+      {/* Doctor image - Unified implementation
+          Mobile: normal flow element below text, max-h 50vh
+          Desktop: absolute positioned to the right side
+      */}
+      <div className="w-full lg:absolute lg:right-0 lg:top-0 lg:bottom-[-10%] lg:w-[65vw] pointer-events-none mt-auto">
+        <img
+          src={fotoDoutor}
+          alt="Dr. Lourival Carvalho - Cirurgião Plástico"
+          className="w-full h-full max-h-[50vh] lg:max-h-none object-cover object-top lg:object-[30%_20%]"
+        />
       </div>
     </section>
   );

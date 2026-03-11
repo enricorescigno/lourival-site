@@ -23,11 +23,13 @@
     background-repeat: no-repeat;
 }
 
-.glare-hover:hover {
+.glare-hover:hover,
+.glare-hover.is-active {
     cursor: pointer;
 }
 
-.glare-hover:hover::before {
+.glare-hover:hover::before,
+.glare-hover.is-active::before {
     background-position: 0% 0%;
 }
 
@@ -35,7 +37,8 @@
     transition: none;
 }
 
-.glare-hover--play-once:hover::before {
+.glare-hover--play-once:hover::before,
+.glare-hover--play-once.is-active::before {
     transition: var(--gh-duration) ease;
     background-position: 0% 0%;
 }

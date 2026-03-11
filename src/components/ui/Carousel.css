@@ -55,9 +55,19 @@
 .carousel-indicators {
     margin-top: 8px;
     display: flex;
-    gap: 6px;
+    gap: 2px;
     justify-content: center;
     padding: 0;
+}
+
+.carousel-indicator-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 .carousel-indicator {

@@ -20,7 +20,7 @@ const Experiencia = () => {
     <section id="experiencia" className="py-20 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl text-foreground">
+          <h2 className="font-playfair text-fluid-h2 text-foreground">
             SUA EXPERIÊNCIA SERÁ <span className="font-bold">ULTRA PERSONALIZADA</span>
           </h2>
         </div>
@@ -35,9 +35,11 @@ const Experiencia = () => {
               transitionDuration={1100}
               borderRadius="8px"
             >
-              <div className="bg-card border border-border rounded-lg p-8 text-center hover:border-primary/30 transition-colors w-full h-full">
-                <img src={item.icon} alt={item.title} className="w-24 h-24 mx-auto mb-6 object-contain" />
-                <h3 className="font-montserrat text-sm text-primary mb-3 font-bold uppercase tracking-wider">{item.title}</h3>
+              <div className="bg-card border border-border rounded-lg p-8 text-center hover:border-primary/30 transition-colors w-full h-full min-h-[320px] lg:min-h-[300px] flex flex-col justify-between">
+                <div>
+                  <img src={item.icon} alt={item.title} loading="lazy" className="w-24 h-24 mx-auto mb-6 object-contain" />
+                  <h3 className="font-montserrat text-sm text-primary mb-3 font-bold uppercase tracking-wider">{item.title}</h3>
+                </div>
                 <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
               </div>
             </GlareHover>
@@ -47,7 +49,7 @@ const Experiencia = () => {
         <div className="text-center mt-12">
           <a
             href="#contato"
-            className="inline-block rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-4 hover:opacity-90 transition-all font-bold"
+            className="inline-block w-full lg:w-auto text-center rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-4 hover:opacity-90 transition-all font-bold"
           >
             MARQUE SUA <span>CONSULTA</span>
           </a>

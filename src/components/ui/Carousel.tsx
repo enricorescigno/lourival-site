@@ -79,8 +79,26 @@ export default function Carousel({
   const [isHovered, setIsHovered] = useState(false);
   const [isJumping, setIsJumping] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [containerWidth, setContainerWidth] = useState(baseWidth);
 
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Responsive width observer
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const currentItemWidth = containerWidth || baseWidth;
+  const itemWidthCalculated = currentItemWidth - containerPadding * 2;
+  const trackItemOffsetCalculated = itemWidthCalculated + GAP;
 
   useEffect(() => {
     if (pauseOnHover && containerRef.current) {
@@ -110,8 +128,8 @@ export default function Carousel({
   useEffect(() => {
     const startingPosition = loop ? 1 : 0;
     setPosition(startingPosition);
-    x.set(-startingPosition * trackItemOffset);
-  }, [items.length, loop, trackItemOffset, x]);
+    x.set(-startingPosition * trackItemOffsetCalculated);
+  }, [items.length, loop, trackItemOffsetCalculated, x]);
 
   useEffect(() => {
     if (!loop && position > itemsForRender.length - 1) {
@@ -136,7 +154,7 @@ export default function Carousel({
       setIsJumping(true);
       const target = 1;
       setPosition(target);
-      x.set(-target * trackItemOffset);
+      x.set(-target * trackItemOffsetCalculated);
       requestAnimationFrame(() => {
         setIsJumping(false);
         setIsAnimating(false);
@@ -148,7 +166,7 @@ export default function Carousel({
       setIsJumping(true);
       const target = items.length;
       setPosition(target);
-      x.set(-target * trackItemOffset);
+      x.set(-target * trackItemOffsetCalculated);
       requestAnimationFrame(() => {
         setIsJumping(false);
         setIsAnimating(false);
@@ -181,7 +199,7 @@ export default function Carousel({
     ? {}
     : {
       dragConstraints: {
-        left: -trackItemOffset * Math.max(itemsForRender.length - 1, 0),
+        left: -trackItemOffsetCalculated * Math.max(itemsForRender.length - 1, 0),
         right: 0,
       },
     };
@@ -204,14 +222,14 @@ export default function Carousel({
         drag={isAnimating ? false : 'x'}
         {...dragProps}
         style={{
-          width: itemWidth,
+          width: itemWidthCalculated,
           gap: `${GAP}px`,
           perspective: 1000,
-          perspectiveOrigin: `${position * trackItemOffset + itemWidth / 2}px 50%`,
+          perspectiveOrigin: `${position * trackItemOffsetCalculated + itemWidthCalculated / 2}px 50%`,
           x,
         }}
         onDragEnd={handleDragEnd}
-        animate={{ x: -(position * trackItemOffset) }}
+        animate={{ x: -(position * trackItemOffsetCalculated) }}
         transition={effectiveTransition}
         onAnimationStart={handleAnimationStart}
         onAnimationComplete={handleAnimationComplete}
@@ -221,8 +239,8 @@ export default function Carousel({
             key={`${item.id}-${index}`}
             item={item}
             index={index}
-            itemWidth={itemWidth}
-            trackItemOffset={trackItemOffset}
+            itemWidth={itemWidthCalculated}
+            trackItemOffset={trackItemOffsetCalculated}
             x={x}
             transition={effectiveTransition}
           />
@@ -231,13 +249,17 @@ export default function Carousel({
       <div className="carousel-indicators-container">
         <div className="carousel-indicators">
           {items.map((_, index) => (
-            <motion.div
+            <div
               key={index}
-              className={`carousel-indicator ${activeIndex === index ? 'active' : 'inactive'}`}
-              animate={{ scale: activeIndex === index ? 1.2 : 1 }}
+              className="carousel-indicator-wrapper"
               onClick={() => setPosition(loop ? index + 1 : index)}
-              transition={{ duration: 0.15 }}
-            />
+            >
+              <motion.div
+                className={`carousel-indicator ${activeIndex === index ? 'active' : 'inactive'}`}
+                animate={{ scale: activeIndex === index ? 1.2 : 1 }}
+                transition={{ duration: 0.15 }}
+              />
+            </div>
           ))}
         </div>
       </div>

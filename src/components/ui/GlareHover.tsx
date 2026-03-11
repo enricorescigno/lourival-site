@@ -30,6 +30,7 @@ const GlareHover: React.FC<GlareHoverProps> = ({
     playOnce = false,
     className = '',
 }) => {
+    const [isActive, setIsActive] = useState(false);
     const styles: { [key: string]: string } = {};
 
     // Parse hex color to rgba
@@ -57,8 +58,11 @@ const GlareHover: React.FC<GlareHoverProps> = ({
 
     return (
         <div
-            className={`glare-hover ${playOnce ? 'glare-hover--play-once' : ''} ${className}`}
+            className={`glare-hover ${playOnce ? 'glare-hover--play-once' : ''} ${isActive ? 'is-active' : ''} ${className}`}
             style={rootVars}
+            onTouchStart={() => setIsActive(true)}
+            onTouchEnd={() => setIsActive(false)}
+            onTouchCancel={() => setIsActive(false)}
         >
             {children}
         </div>
