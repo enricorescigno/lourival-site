@@ -14,7 +14,7 @@ const Header = () => {
 
         <a
           href="#contato"
-          className="hidden md:inline-block bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-6 py-3 hover:opacity-90 transition-all font-bold"
+          className="hidden md:inline-block rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-6 py-3 hover:opacity-90 transition-all font-bold"
         >
           MARQUE SUA <span>CONSULTA</span>
         </a>
@@ -35,7 +35,7 @@ const Header = () => {
           <a
             href="#contato"
             onClick={() => setMenuOpen(false)}
-            className="bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-6 py-3 text-center hover:opacity-90 transition-all font-bold"
+            className="bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] rounded-[20px] text-black font-montserrat text-sm uppercase tracking-wider px-6 py-3 text-center hover:opacity-90 transition-all font-bold"
           >
             MARQUE SUA <span>CONSULTA</span>
           </a>
