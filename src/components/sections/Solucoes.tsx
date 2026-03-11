@@ -78,7 +78,7 @@ const Solucoes = () => {
                 </ul>
                 <a
                   href="#contato"
-                  className="mt-auto inline-flex items-center justify-center min-h-[44px] w-full text-center rounded-md bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-xs uppercase tracking-wider px-4 py-3 hover:opacity-90 transition-all font-bold"
+                  className="mt-auto inline-flex items-center justify-center min-h-[44px] text-center rounded-md bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-xs uppercase tracking-wider px-4 py-3 hover:opacity-90 transition-all font-bold"
                 >
                   EU QUERO ESTA <span>SOLUÇÃO</span>
                 </a>
