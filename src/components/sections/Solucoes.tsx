@@ -11,55 +11,46 @@ const solucoes = [
     desc: "Procedimentos que refazem que melhoram todo o contorno do seu corpo.",
     procedures: ["LIPOASPIRAÇÃO", "ABDOMINOPLASTIA", "TRATAMENTO DE LIPEDEMA", "ENXERTIA MUSCULAR", "LIPOABDOMINOPLASTIA", "REMODELAMENTO GLÚTEO"],
     image: imgContornoCorporal,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Contorno Corporal. Gostaria de saber mais sobre as opções disponíveis.",
   },
   {
     title: "CIRURGIAS MAMÁRIAS",
     desc: "Procedimentos de remodelam e dão simetria e naturalidade às mamas, sendo de aumento ou redução.",
     procedures: ["MASTOPEXIA COM PRÓTESE", "MASTOPEXIA SEM PRÓTESE", "MAMOPLASTIA REDUTORA", "MAMOPLASTIA DE AUMENTO"],
     image: imgCirurgiasMamarias,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Cirurgias Mamárias. Gostaria de saber mais sobre as opções disponíveis.",
   },
   {
     title: "EXTREMIDADES",
     desc: "Procedimentos que redefinem contornos de braços e pernas, buscando melhorar proporção, firmeza e conforto.",
     procedures: ["BRAQUIOPLASTIA", "CRUROPLASTIA"],
     image: imgExtremidades,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Extremidades. Gostaria de saber mais sobre as opções disponíveis.",
   },
   {
     title: "MOMMYMAKEOVER",
-    desc: "Procedimento que combina diferentes técnicas em uma única cirurgia para remodelar o corpo após as mudanças da gestação.",
+    desc: "Procedimento que combina differentes técnicas em uma única cirurgia para remodelar o corpo após as mudanças da gestação.",
     procedures: ["PROCEDIMENTOS DE ABDOMEN", "PROCEDIMENTOS DE MAMA", "PROCEDIMENTOS DE CONTORNO CORPORAL"],
     image: imgMommymakeover,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Mommy Makeover. Gostaria de saber mais sobre as opções disponíveis.",
   },
   {
     title: "CIRURGIAS ÍNTIMAS",
     desc: "Procedimentos realizados nas áreas íntimas para devolver conforto, bem-estar e naturalidade.",
     procedures: ["NINFOPLASTIA", "VAGINOPLASTIA", "LIPO DO MONTE DE VÊNUS", "DEMAIS PROCEDIMENTOS"],
     image: imgCirurgiaIntima,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Cirurgias Íntimas. Gostaria de saber mais sobre as opções disponíveis.",
   },
   {
     title: "FACE",
     desc: "Procedimentos que suavizam os traços e corrigem imperfeições faciais, devolvendo harmonia facial.",
     procedures: ["BLEFAROPLASTIA", "OTOPLASTIA", "FACELIFT", "RINOPLASTIA"],
     image: imgFace,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Face. Gostaria de saber mais sobre as opções disponíveis.",
   },
 ];
 
 const Solucoes = () => {
-  const scrollToSection = (sectionId: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section id="solucoes" className="py-20 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,8 +83,9 @@ const Solucoes = () => {
                   ))}
                 </ul>
                 <a
-                  href="#contato"
-                  onClick={scrollToSection("contato")}
+                  href={s.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-auto inline-flex items-center justify-center min-h-[44px] text-center rounded-md bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-xs uppercase tracking-wider px-4 py-3 hover:opacity-90 transition-all font-bold"
                 >
                   EU QUERO ESTA SOLUÇÃO

@@ -30,8 +30,9 @@ const Header = () => {
 
         <div className="flex items-center gap-4">
           <a
-            href="#contato"
-            onClick={scrollToSection("contato")}
+            href="https://wa.me/5581994401032?text=Olá, gostaria de agendar uma consulta com o Dr. Lourival Carvalho."
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:inline-block rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-6 py-3 hover:opacity-90 transition-all font-bold"
           >
             MARQUE SUA <span>CONSULTA</span>
@@ -60,8 +61,9 @@ const Header = () => {
           <a href="#faq" onClick={scrollToSection("faq")} className="text-foreground text-sm uppercase tracking-widest py-2">FAQ</a>
           <a href="#contato" onClick={scrollToSection("contato")} className="text-foreground text-sm uppercase tracking-widest py-2">Contato</a>
           <a
-            href="#contato"
-            onClick={scrollToSection("contato")}
+            href="https://wa.me/5581994401032?text=Olá, gostaria de agendar uma consulta com o Dr. Lourival Carvalho."
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] rounded-[20px] text-black font-montserrat text-sm uppercase tracking-wider px-6 py-3 text-center hover:opacity-90 transition-all font-bold mt-2"
           >
             MARQUE SUA <span>CONSULTA</span>

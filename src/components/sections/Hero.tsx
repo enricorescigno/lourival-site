@@ -27,20 +27,9 @@ const Hero = () => {
             Cuidado completo e acompanhamento personalizado para alcançar resultados naturais e duradouros, elevando sua autoestima e qualidade de vida.
           </p>
           <a
-            href="#contato"
-            onClick={(e) => {
-              e.preventDefault();
-              const element = document.getElementById("contato");
-              if (element) {
-                const offset = 80;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
-              }
-            }}
+            href="https://wa.me/5581994401032?text=Olá, gostaria de agendar uma consulta com o Dr. Lourival Carvalho."
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block text-center rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-4 hover:opacity-90 transition-all font-bold"
           >
             MARQUE SUA <span>CONSULTA</span>
