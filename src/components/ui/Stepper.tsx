@@ -155,8 +155,8 @@ function StepContentWrapper({
     return (
         <motion.div
             className={className}
-            style={{ position: 'relative', overflow: 'hidden' }}
-            animate={{ height: isCompleted ? 0 : parentHeight }}
+            style={{ position: 'relative' }}
+            animate={{ height: isCompleted ? 0 : parentHeight > 0 ? parentHeight : 'auto' }}
             transition={{ type: 'spring', duration: 0.4 }}
         >
             <AnimatePresence initial={false} mode="sync" custom={direction}>
@@ -194,9 +194,11 @@ function SlideTransition({
             animate="center"
             exit="exit"
             transition={{ duration: 0.4 }}
-            style={{ position: 'absolute', left: 0, right: 0, top: 0 }}
+            style={{ position: 'absolute', left: 0, right: 0, top: 0, width: '100%' }}
         >
-            {children}
+            <div style={{ paddingBottom: '1rem' }}>
+                {children}
+            </div>
         </motion.div>
     );
 }
