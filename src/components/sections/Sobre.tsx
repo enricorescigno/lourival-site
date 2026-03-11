@@ -10,7 +10,7 @@ const Sobre = () => {
             <img
               src={imagemSobre}
               alt="Dr. Lourival Carvalho - Sobre"
-              className="w-full h-[40vh] lg:h-auto object-cover object-top rounded-lg"
+              className="w-full h-[30vh] lg:h-auto object-cover object-top rounded-lg"
               loading="lazy"
             />
           </div>
