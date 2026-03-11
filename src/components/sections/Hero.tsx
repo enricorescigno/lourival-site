@@ -31,7 +31,7 @@ const Hero = () => {
           >
             MARQUE SUA <span>CONSULTA</span>
           </a>
-          <div className="mt-10 border-t border-border pt-6 pb-2 lg:pb-0">
+          <div className="hidden lg:block mt-10 border-t border-border pt-6 pb-2 lg:pb-0">
             <p className="font-playfair text-fluid-h3 text-foreground font-bold">Dr. Lourival Carvalho</p>
             <p className="text-muted-foreground text-fluid-small uppercase tracking-wider">Cirurgião Plástico Especialista</p>
           </div>
