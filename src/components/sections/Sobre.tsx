@@ -16,7 +16,7 @@ const Sobre = () => {
           </div>
 
           {/* Right - Text */}
-          <div>
+          <div className="text-center lg:text-left">
             <h2 className="font-playfair text-fluid-h2 text-foreground mb-2">
               SOBRE
             </h2>
