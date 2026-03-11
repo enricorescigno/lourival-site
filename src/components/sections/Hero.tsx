@@ -1,5 +1,5 @@
 import fotoDoutor from "@/assets/FOTO_LAUDA_1.png";
-import mobileHero from "@/assets/mobile_hero.png";
+import mobileHero from "@/assets/imagemmobileheronova.png";
 import GradientText from "@/components/ui/GradientText";
 
 const Hero = () => {
