@@ -35,12 +35,12 @@ const Experiencia = () => {
               transitionDuration={1100}
               borderRadius="8px"
             >
-              <div className="bg-card border border-border rounded-lg p-3 md:p-8 hover:border-primary/30 transition-colors w-full h-full min-h-[220px] md:min-h-[320px] lg:min-h-[300px] flex flex-col justify-start md:justify-between">
-                <div className="flex flex-row items-center justify-start gap-2 mb-3 md:flex-col md:justify-center md:gap-0 md:mb-0">
-                  <img src={item.icon} alt={item.title} loading="lazy" className="w-10 h-10 md:w-24 md:h-24 md:mb-6 mx-0 md:mx-auto object-contain flex-shrink-0" />
+              <div className="bg-card border border-border rounded-lg p-4 md:p-8 hover:border-primary/30 transition-colors w-full h-full md:min-h-[320px] lg:min-h-[300px] flex flex-col justify-center md:justify-between">
+                <div className="flex flex-row items-center justify-start gap-3 mb-3 md:flex-col md:justify-center md:gap-0 md:mb-0">
+                  <img src={item.icon} alt={item.title} loading="lazy" className="w-8 h-8 md:w-24 md:h-24 md:mb-6 mx-0 md:mx-auto object-contain flex-shrink-0" />
                   <h3 className="font-montserrat text-[10px] md:text-sm text-primary font-bold uppercase tracking-wider text-left md:text-center leading-tight md:mb-3">{item.title}</h3>
                 </div>
-                <p className="text-muted-foreground text-[9px] md:text-xs leading-relaxed text-center">{item.desc}</p>
+                <p className="text-muted-foreground text-[9px] md:text-xs leading-relaxed text-left md:text-center">{item.desc}</p>
               </div>
             </GlareHover>
           ))}
