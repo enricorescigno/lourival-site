@@ -25,7 +25,7 @@ const Experiencia = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8">
           {items.map((item, i) => (
             <GlareHover
               key={i}
@@ -35,12 +35,12 @@ const Experiencia = () => {
               transitionDuration={1100}
               borderRadius="8px"
             >
-              <div className="bg-card border border-border rounded-lg p-8 text-center hover:border-primary/30 transition-colors w-full h-full min-h-[320px] lg:min-h-[300px] flex flex-col justify-between">
-                <div>
-                  <img src={item.icon} alt={item.title} loading="lazy" className="w-24 h-24 mx-auto mb-6 object-contain" />
-                  <h3 className="font-montserrat text-sm text-primary mb-3 font-bold uppercase tracking-wider">{item.title}</h3>
+              <div className="bg-card border border-border rounded-lg p-3 md:p-8 hover:border-primary/30 transition-colors w-full h-full min-h-[220px] md:min-h-[320px] lg:min-h-[300px] flex flex-col justify-start md:justify-between">
+                <div className="flex flex-row items-center justify-start gap-2 mb-3 md:flex-col md:justify-center md:gap-0 md:mb-0">
+                  <img src={item.icon} alt={item.title} loading="lazy" className="w-10 h-10 md:w-24 md:h-24 md:mb-6 mx-0 md:mx-auto object-contain flex-shrink-0" />
+                  <h3 className="font-montserrat text-[10px] md:text-sm text-primary font-bold uppercase tracking-wider text-left md:text-center leading-tight md:mb-3">{item.title}</h3>
                 </div>
-                <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+                <p className="text-muted-foreground text-[9px] md:text-xs leading-relaxed text-center">{item.desc}</p>
               </div>
             </GlareHover>
           ))}
