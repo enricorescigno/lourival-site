@@ -6,7 +6,7 @@ const Sobre = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Image */}
-          <div className="w-[85%] mx-auto lg:w-full">
+          <div className="w-[60%] mx-auto lg:w-full">
             <img
               src={imagemSobre}
               alt="Dr. Lourival Carvalho - Sobre"
@@ -16,8 +16,8 @@ const Sobre = () => {
           </div>
 
           {/* Right - Text */}
-          <div className="text-center lg:text-left">
-            <h2 className="font-playfair text-fluid-h2 text-foreground mb-2">
+          <div className="text-center lg:text-left mt-8 lg:mt-0">
+            <h2 className="font-playfair text-fluid-h2 text-foreground mb-0">
               SOBRE
             </h2>
             <h2 className="font-playfair text-fluid-h2 text-foreground mb-8 font-bold">
