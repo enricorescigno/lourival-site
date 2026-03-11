@@ -67,11 +67,11 @@ const Solucoes = () => {
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <h3 className="font-playfair text-lg text-foreground font-bold mb-3 uppercase text-center">{s.title}</h3>
-                <p className="text-muted-foreground text-xs mb-4 leading-relaxed">{s.desc}</p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-1 mb-6">
+                <p className="text-muted-foreground text-xs mb-4 leading-relaxed text-center">{s.desc}</p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-1 mb-6 text-center sm:text-left mx-auto sm:mx-0">
                   {s.procedures.map((p, j) => (
-                    <li key={j} className="text-foreground text-xs flex items-start gap-2">
-                      <span className="w-1 h-1 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <li key={j} className="text-foreground text-xs flex items-center justify-center sm:justify-start gap-2">
+                      <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
                       {p}
                     </li>
                   ))}
