@@ -23,7 +23,7 @@ const Sobre = () => {
             <h2 className="font-playfair text-fluid-h2 text-foreground mb-8 font-bold">
               LOURIVAL CARVALHO
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-fluid-body">
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-fluid-body max-w-[320px] sm:max-w-[360px] mx-auto lg:max-w-none lg:mx-0">
               <p>
                 Lourival Carvalho é Cirurgião Plástico brasileiro, com atuação especializada em Contorno Corporal, LipoHD e Cirurgias Mamárias.
               </p>
