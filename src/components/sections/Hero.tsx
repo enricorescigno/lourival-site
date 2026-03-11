@@ -1,4 +1,5 @@
 import fotoDoutor from "@/assets/FOTO_LAUDA_1.png";
+import mobileHero from "@/assets/mobile_hero.png";
 import GradientText from "@/components/ui/GradientText";
 
 const Hero = () => {
@@ -38,15 +39,19 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Doctor image - Unified implementation
-          Mobile: normal flow element above text (via flex-col-reverse), max-h 50vh
-          Desktop: absolute positioned to the right side
-      */}
+      {/* Doctor images - Responsive Swap */}
       <div className="w-full lg:absolute lg:right-0 lg:top-0 lg:bottom-[-10%] lg:w-[65vw] pointer-events-none flex-shrink-0">
+        {/* Mobile Image */}
+        <img
+          src={mobileHero}
+          alt="Dr. Lourival Carvalho - Cirurgião Plástico"
+          className="w-full h-auto max-h-[50vh] lg:hidden object-cover object-center"
+        />
+        {/* Desktop Image */}
         <img
           src={fotoDoutor}
           alt="Dr. Lourival Carvalho - Cirurgião Plástico"
-          className="w-full h-auto max-h-[50vh] lg:max-h-none object-cover object-top lg:object-[30%_20%]"
+          className="hidden lg:block w-full h-auto max-h-none object-cover object-[30%_20%]"
         />
       </div>
     </section>
