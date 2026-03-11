@@ -3,11 +3,11 @@ import fotoClinica1 from "@/assets/foto-clinica1.png";
 import fotoClinica2 from "@/assets/foto-clinica2.png";
 import Stepper, { Step } from "@/components/ui/Stepper";
 import Carousel from "@/components/ui/Carousel";
-import img1 from "@/assets/1.png";
-import img2 from "@/assets/2.png";
-import img3 from "@/assets/3.png";
-import img4 from "@/assets/4.png";
-import img5 from "@/assets/5.png";
+import img1 from "@/assets/carrossel1.png";
+import img2 from "@/assets/carrossel2.jpg";
+import img3 from "@/assets/carrossel3.jpg";
+import img4 from "@/assets/carrossel4.jpg";
+import img5 from "@/assets/carrossel5.jpg";
 
 const carouselItems = [
   { id: 1, image: img1, title: "Clínica 1" },
