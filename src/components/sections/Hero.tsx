@@ -28,6 +28,19 @@ const Hero = () => {
           </p>
           <a
             href="#contato"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById("contato");
+              if (element) {
+                const offset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }}
             className="inline-block text-center rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-4 hover:opacity-90 transition-all font-bold"
           >
             MARQUE SUA <span>CONSULTA</span>
