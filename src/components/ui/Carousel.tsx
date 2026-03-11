@@ -223,6 +223,7 @@ export default function Carousel({
         {...dragProps}
         style={{
           width: itemWidthCalculated,
+          height: '100%',
           gap: `${GAP}px`,
           perspective: 1000,
           perspectiveOrigin: `${position * trackItemOffsetCalculated + itemWidthCalculated / 2}px 50%`,
