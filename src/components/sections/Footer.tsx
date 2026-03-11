@@ -22,7 +22,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-2">
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/lourivalcarvalho?igsh=MTdoM3ZpYXU2OTg3ZA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:opacity-80 transition-opacity p-2"
@@ -35,7 +35,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.tiktok.com"
+                href="https://www.tiktok.com/@lourivaldcarvalho?_r=1&_t=ZS-94bxlfssK81"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:opacity-80 transition-opacity p-2"
