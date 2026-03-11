@@ -18,6 +18,8 @@ export default function Stepper({
     nextButtonText = 'Próximo',
     disableStepIndicators = false,
     renderStepIndicator,
+    isSubmitting = false,
+    successContent,
     ...rest
 }: {
     children: React.ReactNode;
@@ -34,6 +36,8 @@ export default function Stepper({
     nextButtonText?: string;
     disableStepIndicators?: boolean;
     renderStepIndicator?: (props: { step: number; currentStep: number; onStepClick: (step: number) => void }) => React.ReactNode;
+    isSubmitting?: boolean;
+    successContent?: React.ReactNode;
 }) {
     const [currentStep, setCurrentStep] = useState(initialStep);
     const [direction, setDirection] = useState(0);
@@ -111,7 +115,7 @@ export default function Stepper({
                     direction={direction}
                     className={`step-content-default ${contentClassName}`}
                 >
-                    {stepsArray[currentStep - 1]}
+                    {isCompleted ? successContent : stepsArray[currentStep - 1]}
                 </StepContentWrapper>
 
                 {!isCompleted && (
@@ -126,8 +130,13 @@ export default function Stepper({
                                     {backButtonText}
                                 </button>
                             )}
-                            <button onClick={isLastStep ? handleComplete : handleNext} className="next-button" {...nextButtonProps}>
-                                {isLastStep ? 'Enviar' : nextButtonText}
+                            <button
+                                onClick={isLastStep ? handleComplete : handleNext}
+                                className={`next-button ${isSubmitting ? 'submitting' : ''}`}
+                                disabled={isSubmitting}
+                                {...nextButtonProps}
+                            >
+                                {isLastStep ? (isSubmitting ? 'Enviando...' : 'Enviar') : nextButtonText}
                             </button>
                         </div>
                     </div>

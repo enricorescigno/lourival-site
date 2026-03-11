@@ -38,12 +38,45 @@ const Contato = () => {
   const [procedimento, setProcedimento] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 1024 : false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://n8n.rfmidias.com.br/webhook/webhookforms", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome,
+          email,
+          whatsapp,
+          procedimento,
+          mensagem,
+          timestamp: new Date().toISOString(),
+          source: window.location.href
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Falha ao enviar o formulário");
+      }
+
+      console.log("Formulário enviado com sucesso!");
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+      // Opcional: alert("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const currentItems = isMobile ? mobileCarouselItems : desktopCarouselItems;
 
@@ -103,9 +136,14 @@ const Contato = () => {
               <Stepper
                 initialStep={1}
                 onStepChange={(step) => console.log("Step:", step)}
-                onFinalStepCompleted={() => {
-                  console.log("Formulário enviado!", { nome, email, whatsapp, procedimento, mensagem });
-                }}
+                onFinalStepCompleted={handleSubmit}
+                isSubmitting={isSubmitting}
+                successContent={
+                  <div className="py-8">
+                    <h2 className="font-playfair text-2xl mb-4">Tudo Pronto!</h2>
+                    <p className="text-muted-foreground">Obrigado, {nome || "paciente"}! Entraremos em contato em breve.</p>
+                  </div>
+                }
                 backButtonText="Voltar"
                 nextButtonText="Próximo"
               >
@@ -118,6 +156,7 @@ const Contato = () => {
                     placeholder="Seu nome"
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
+                    required
                   />
                 </Step>
 
@@ -130,6 +169,7 @@ const Contato = () => {
                     placeholder="seu@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                   <label>WhatsApp</label>
                   <input
@@ -137,13 +177,14 @@ const Contato = () => {
                     placeholder="(81) 99999-9999"
                     value={whatsapp}
                     onChange={(e) => setWhatsapp(e.target.value)}
+                    required
                   />
                 </Step>
 
                 <Step>
                   <h2>Procedimento</h2>
                   <label>Área de interesse</label>
-                  <select value={procedimento} onChange={(e) => setProcedimento(e.target.value)}>
+                  <select value={procedimento} onChange={(e) => setProcedimento(e.target.value)} required>
                     <option value="">Selecione...</option>
                     <option value="contorno-corporal">Contorno Corporal</option>
                     <option value="cirurgias-mamarias">Cirurgias Mamárias</option>
@@ -161,11 +202,6 @@ const Contato = () => {
                     rows={2}
                     style={{ resize: 'none' }}
                   />
-                </Step>
-
-                <Step>
-                  <h2>Tudo Pronto!</h2>
-                  <p>Obrigado, {nome || "paciente"}! Entraremos em contato em breve.</p>
                 </Step>
               </Stepper>
             </div>
