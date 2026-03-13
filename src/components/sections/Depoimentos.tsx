@@ -1,6 +1,10 @@
 import { Star } from "lucide-react";
 import antesMamoplastia from "@/assets/antes-mamoplastia.png";
 import depoisMamoplastia from "@/assets/depois-mamoplastia.png";
+import antesLipo from "@/assets/antes_lipo.png";
+import depoisLipo from "@/assets/depois_lipo.png";
+import antesMommy from "@/assets/antes_mommy.png";
+import depoisMommy from "@/assets/depois_mommy.png";
 
 const depoimentos = [
   {
@@ -12,14 +16,14 @@ const depoimentos = [
   {
     procedimento: "PROTOCOLO LIPO LC",
     texto: "\"O que mais me impressionou foi o cuidado da equipe antes e depois da cirurgia. Tudo foi muito bem explicado e acompanhado. Hoje olho no espelho e vejo um corpo muito mais harmônico e definido, ou ideal como ele sempre fala kk. Valeu cada momento.\"",
-    antes: null,
-    depois: null,
+    antes: antesLipo,
+    depois: depoisLipo,
   },
   {
     procedimento: "MOMMY MAKEOVER",
     texto: "\"O resultado ficou muito mais natural do que eu imaginava. Além da melhora estética, também senti mais conforto no dia a dia. O cuidado do Dr. Lourival e da equipe fez toda diferença nesse processo.\"",
-    antes: null,
-    depois: null,
+    antes: antesMommy,
+    depois: depoisMommy,
   },
 ];
 
