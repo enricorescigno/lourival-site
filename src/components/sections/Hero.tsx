@@ -4,9 +4,9 @@ import GradientText from "@/components/ui/GradientText";
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen bg-background overflow-hidden flex flex-col-reverse lg:block lg:min-h-screen pt-20 lg:pt-0">
+    <section id="hero" className="relative min-h-screen bg-background overflow-hidden flex flex-col-reverse lg:block lg:h-screen pt-20 lg:pt-0">
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-start pt-8 pb-12 lg:pt-20 lg:min-h-screen text-center lg:text-left">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-start pt-8 pb-12 lg:pt-20 lg:h-screen text-center lg:text-left">
         <div className="w-full lg:w-1/2 lg:pr-12">
           <h1 className="sr-only">Cirurgião Plástico Especialista em Contorno Corporal e Lipo HD</h1>
           <h2 className="font-playfair text-fluid-h1 lg:leading-[1.3] mb-6 mt-4 lg:mt-0">
@@ -41,7 +41,7 @@ const Hero = () => {
       </div>
 
       {/* Doctor images - Responsive Swap */}
-      <div className="w-full lg:absolute lg:right-0 lg:top-0 lg:bottom-[-10%] lg:w-[65vw] pointer-events-none flex-shrink-0">
+      <div className="w-full lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:w-[65vw] pointer-events-none flex-shrink-0">
         {/* Mobile Image */}
         <img
           src={mobileHero}
@@ -52,7 +52,7 @@ const Hero = () => {
         <img
           src={fotoDoutor}
           alt="Dr. Lourival Carvalho - Cirurgião Plástico"
-          className="hidden lg:block w-full h-auto max-h-none object-cover object-[30%_20%]"
+          className="hidden lg:block w-full h-full object-cover object-top"
         />
       </div>
     </section>
