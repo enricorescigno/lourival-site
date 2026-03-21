@@ -1,0 +1,109 @@
+import imgContornoCorporal from "@/assets/contorno-corporal.png";
+import imgCirurgiasMamarias from "@/assets/cirurgias-mamarias.png";
+import imgExtremidades from "@/assets/extremidades.png";
+import imgMommymakeover from "@/assets/mommymakeover.png";
+import imgCirurgiaIntima from "@/assets/cirurgia-intima.png";
+import imgFace from "@/assets/face.png";
+
+const solucoes = [
+  {
+    title: "CONTORNO CORPORAL",
+    desc: "Procedimentos que refazem que melhoram todo o contorno do seu corpo.",
+    procedures: ["LIPOASPIRAÇÃO", "ABDOMINOPLASTIA", "TRATAMENTO DE LIPEDEMA", "ENXERTIA MUSCULAR", "LIPOABDOMINOPLASTIA", "REMODELAMENTO GLÚTEO"],
+    image: imgContornoCorporal,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Contorno Corporal. Gostaria de saber mais sobre as opções disponíveis.",
+  },
+  {
+    title: "CIRURGIAS MAMÁRIAS",
+    desc: "Procedimentos de remodelam e dão simetria e naturalidade às mamas, sendo de aumento ou redução.",
+    procedures: ["MASTOPEXIA COM PRÓTESE", "MASTOPEXIA SEM PRÓTESE", "MAMOPLASTIA REDUTORA", "MAMOPLASTIA DE AUMENTO"],
+    image: imgCirurgiasMamarias,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Cirurgias Mamárias. Gostaria de saber mais sobre as opções disponíveis.",
+  },
+  {
+    title: "EXTREMIDADES",
+    desc: "Procedimentos que redefinem contornos de braços e pernas, buscando melhorar proporção, firmeza e conforto.",
+    procedures: ["BRAQUIOPLASTIA", "CRUROPLASTIA"],
+    image: imgExtremidades,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Extremidades. Gostaria de saber mais sobre as opções disponíveis.",
+  },
+  {
+    title: "MOMMYMAKEOVER",
+    desc: "Procedimento que combina differentes técnicas em uma única cirurgia para remodelar o corpo após as mudanças da gestação.",
+    procedures: ["PROCEDIMENTOS DE ABDOMEN", "PROCEDIMENTOS DE MAMA", "PROCEDIMENTOS DE CONTORNO CORPORAL"],
+    image: imgMommymakeover,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Mommy Makeover. Gostaria de saber mais sobre as opções disponíveis.",
+  },
+  {
+    title: "CIRURGIAS ÍNTIMAS",
+    desc: "Procedimentos realizados nas áreas íntimas para devolver conforto, bem-estar e naturalidade.",
+    procedures: ["NINFOPLASTIA", "VAGINOPLASTIA", "LIPO DO MONTE DE VÊNUS", "DEMAIS PROCEDIMENTOS"],
+    image: imgCirurgiaIntima,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Cirurgias Íntimas. Gostaria de saber mais sobre as opções disponíveis.",
+  },
+  {
+    title: "FACE",
+    desc: "Procedimentos que suavizam os traços e corrigem imperfeições faciais, devolvendo harmonia facial.",
+    procedures: ["BLEFAROPLASTIA", "OTOPLASTIA", "FACELIFT", "RINOPLASTIA"],
+    image: imgFace,
+    whatsappLink: "https://wa.me/5581994401032?text=Tenho interesse em procedimentos de Face. Gostaria de saber mais sobre as opções disponíveis.",
+  },
+];
+
+const Solucoes = () => {
+  return (
+    <section id="solucoes" className="py-20 lg:py-32 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="font-playfair text-fluid-h2 text-foreground">
+            SOLUÇÕES <span className="font-bold">IDEAIS</span> PARA O SEU <span className="font-bold">MOMENTO ATUAL</span>
+          </h2>
+          <p className="md:hidden flex items-center justify-center gap-2 text-muted-foreground text-xs uppercase tracking-widest mt-4 animate-pulse">
+            Deslize para ver mais
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </p>
+        </div>
+
+        <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 md:px-0 md:mx-0 scrollbar-hide">
+          {solucoes.map((s, i) => (
+            <div key={i} className="min-w-[85%] sm:min-w-[45%] md:min-w-0 snap-center bg-card border border-border rounded-lg overflow-hidden group hover:border-primary/30 transition-colors flex flex-col mr-4 md:mr-0 last:mr-0">
+              <div className="h-48 sm:aspect-[4/3] lg:aspect-video overflow-hidden">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="font-playfair text-lg text-foreground font-bold mb-3 uppercase text-center">{s.title}</h3>
+                <p className="text-muted-foreground text-xs mb-4 leading-relaxed text-center">{s.desc}</p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-1 mb-6 text-center sm:text-left mx-auto sm:mx-0">
+                  {s.procedures.map((p, j) => (
+                    <li key={j} className="text-foreground text-xs flex items-center justify-center sm:justify-start gap-2">
+                      <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={s.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto inline-flex items-center justify-center min-h-[44px] text-center rounded-md bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-xs uppercase tracking-wider px-4 py-3 hover:opacity-90 transition-all font-bold"
+                >
+                  EU QUERO ESTA SOLUÇÃO
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Solucoes;
