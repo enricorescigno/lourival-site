@@ -1,14 +1,5 @@
 import React, { useEffect } from "react";
 import GradientText from "@/components/ui/GradientText";
-import LogoLoop from "@/components/ui/LogoLoop";
-import { Star } from "lucide-react";
-import antesMamoplastia from "@/assets/antes-mamoplastia.png";
-import depoisMamoplastia from "@/assets/depois-mamoplastia.png";
-import antesLipo from "@/assets/antes_lipo.png";
-import depoisLipo from "@/assets/depois_lipo.png";
-import antesMommy from "@/assets/antes_mommy.png";
-import depoisMommy from "@/assets/depois_mommy.png";
-
 const procedimentosList = [
   "LIPOASPIRAÇÃO",
   "ABDOMINOPLASTIA",
@@ -18,27 +9,6 @@ const procedimentosList = [
   "CONTORNO CORPORAL",
   "EXTREMIDADES",
   "FACE"
-];
-
-const depoimentos = [
-  {
-    procedimento: "MAMOPLASTIA",
-    texto: "\"Desde a primeira consulta me senti muito segura... O resultado ficou exatamente como eu sonhava: natural e proporcional ao meu corpo.\"",
-    antes: antesMamoplastia,
-    depois: depoisMamoplastia,
-  },
-  {
-    procedimento: "PROTOCOLO LIPO LC",
-    texto: "\"O que mais me impressionou foi o cuidado da equipe antes e depois da cirurgia. Tudo foi muito bem explicado e acompanhado.\"",
-    antes: antesLipo,
-    depois: depoisLipo,
-  },
-  {
-    procedimento: "MOMMY MAKEOVER",
-    texto: "\"O resultado ficou muito mais natural do que eu imaginava. Além da melhora estética, também senti mais conforto no dia a dia.\"",
-    antes: antesMommy,
-    depois: depoisMommy,
-  },
 ];
 
 const Lp = () => {
@@ -122,47 +92,7 @@ const Lp = () => {
           </a>
         </div>
 
-        {/* Testimonials Carousel (infinite loop) */}
-        <div className="mt-4 w-full">
-          <h3 className="font-playfair text-xl text-foreground font-bold mb-6 text-center px-6">
-            RESULTADOS REAIS
-          </h3>
-          
-          {/* LogoLoop with custom content instead of text */}
-          <LogoLoop
-            items={depoimentos.map(d => ({
-              content: (
-                <div className="w-[300px] h-[380px] bg-white border border-border rounded-lg overflow-hidden flex flex-col mx-2">
-                  <div className="h-[180px] bg-neutral-900 flex items-center justify-center relative overflow-hidden flex-shrink-0">
-                    <div className="absolute top-2 left-2 z-10 bg-black/60 px-2 py-0.5 rounded text-white text-[10px] uppercase tracking-wider">ANTES</div>
-                    <div className="absolute top-2 right-2 z-10 bg-black/60 px-2 py-0.5 rounded text-white text-[10px] uppercase tracking-wider">DEPOIS</div>
-                    <div className="w-1/2 h-full overflow-hidden">
-                      <img src={d.antes} alt="Antes" loading="lazy" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="w-px h-full bg-white/30 flex-shrink-0" />
-                    <div className="w-1/2 h-full overflow-hidden">
-                      <img src={d.depois} alt="Depois" loading="lazy" className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-                  <div className="p-5 bg-white flex-1 flex flex-col">
-                    <div className="flex gap-1 mb-2 justify-center">
-                      {[...Array(5)].map((_, j) => (
-                        <Star key={j} size={14} className="fill-[#B3936C] text-[#B3936C]" />
-                      ))}
-                    </div>
-                    <p className="text-black text-xs font-bold uppercase tracking-wider mb-2 text-center font-montserrat whitespace-normal">{d.procedimento}</p>
-                    <p className="text-black/80 text-[11px] leading-relaxed text-center whitespace-normal overflow-hidden overflow-ellipsis line-clamp-4">{d.texto}</p>
-                  </div>
-                </div>
-              )
-            }))}
-            speed={30}
-            direction="left"
-            gap={0}
-            fadeOut={true}
-            scaleOnHover={false}
-          />
-        </div>
+
 
         {/* Embedded Typeform Popup Button Section */}
         <div id="formulario" className="mt-8 px-6 w-full flex justify-center">
