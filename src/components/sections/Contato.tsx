@@ -121,11 +121,18 @@ const Contato = ({ useTypeformInsteadOfMap = false }: ContatoProps = {}) => {
           <div className="order-1 lg:order-none flex flex-col gap-2 h-[300px] lg:h-full lg:flex-[1.5]">
             <div className="rounded-lg overflow-hidden flex-1 relative w-full h-full">
               {useTypeformInsteadOfMap ? (
-                <div
-                  data-tf-live="01KKFKCP9BC4WVB3Q22D4E0EW1"
-                  className="flex-1 w-full h-full"
-                  style={{ width: '100%', height: '100%', minHeight: '300px' }}
-                ></div>
+                <div className="flex-1 w-full h-full flex flex-col items-center justify-center bg-card border border-border rounded-lg p-6 text-center">
+                  <h3 className="font-playfair text-lg text-foreground font-bold mb-4">FORMULÁRIO DE TRIAGEM</h3>
+                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed max-w-[250px]">
+                    Preencha o nosso formulário rápido para entendermos melhor o seu caso.
+                  </p>
+                  <button
+                    data-tf-popup="01KKFKCP9BC4WVB3Q22D4E0EW1"
+                    className="inline-flex items-center justify-center rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-xs uppercase tracking-wider px-6 py-4 hover:opacity-90 transition-all font-bold shadow-sm"
+                  >
+                    ABRIR FORMULÁRIO
+                  </button>
+                </div>
               ) : (
                 <iframe
                   src="https://maps.google.com/maps?q=RioMar+Trade+Center+5,+Avenida+Rep%C3%BAblica+do+L%C3%ADbano,+256,+sala+720,+Pina,+Recife,+PE,+51110-160&t=&z=15&ie=UTF8&iwloc=&output=embed"
