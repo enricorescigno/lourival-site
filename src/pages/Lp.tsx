@@ -3,12 +3,12 @@ import GradientText from "@/components/ui/GradientText";
 import imagemSobre from "@/assets/Imagem_Sobre_Nos.png";
 import LogoLoop from "@/components/ui/LogoLoop";
 import { Star } from "lucide-react";
-import antesLipo from "@/assets/ANTES_LIPO.png";
-import depoisLipo from "@/assets/DEPOIS_LIPO.png";
-import antesMommy from "@/assets/ANTES_MOMMY.png";
-import depoisMommy from "@/assets/DEPOIS_MOMMY.png";
-import antesMamoplastia from "@/assets/ANTES_MAMO.png";
-import depoisMamoplastia from "@/assets/DEPOIS_MAMO.png";
+import antesLipo from "@/assets/antes_lipo.png";
+import depoisLipo from "@/assets/depois_lipo.png";
+import antesMommy from "@/assets/antes_mommy.png";
+import depoisMommy from "@/assets/depois_mommy.png";
+import antesMamoplastia from "@/assets/antes-mamoplastia.png";
+import depoisMamoplastia from "@/assets/depois-mamoplastia.png";
 
 const procedimentosList = [
   "LIPOASPIRAÇÃO",
