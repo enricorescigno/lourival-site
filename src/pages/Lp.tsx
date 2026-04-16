@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import GradientText from "@/components/ui/GradientText";
+import imagemSobre from "@/assets/Imagem_Sobre_Nos.png";
 const procedimentosList = [
   "LIPOASPIRAÇÃO",
   "ABDOMINOPLASTIA",
@@ -51,7 +52,16 @@ const Lp = () => {
         </div>
 
         {/* About & Procedures Section */}
-        <div className="px-6 text-center flex flex-col gap-6">
+        <div className="px-6 text-center flex flex-col gap-6 mt-4">
+          <div className="w-[60%] mx-auto max-w-[240px]">
+            <img
+              src={imagemSobre}
+              alt="Dr. Lourival Carvalho"
+              className="w-full h-auto object-contain object-center rounded-lg shadow-xl"
+              loading="lazy"
+            />
+          </div>
+          
           <h2 className="font-playfair text-2xl text-foreground font-bold">
             DR. LOURIVAL CARVALHO
           </h2>
