@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import GradientText from "@/components/ui/GradientText";
 import LogoLoop from "@/components/ui/LogoLoop";
-import Contato from "@/components/sections/Contato";
 import { Star } from "lucide-react";
 import antesMamoplastia from "@/assets/antes-mamoplastia.png";
 import depoisMamoplastia from "@/assets/depois-mamoplastia.png";
@@ -165,11 +164,19 @@ const Lp = () => {
           />
         </div>
 
-        {/* Embedded Form (Contato section modified via wrapper CSS to fit mobile strictly) */}
-        <div id="formulario" className="mt-8 relative [&>section]:pt-12 [&>section]:pb-8 [&>section_.max-w-7xl]:px-0">
-          {/* A tiny bit of padding injected around Contato specifically for this page so it flows nicely without the outer container constraints being broken */}
-          <div className="px-4">
-             <Contato useTypeformInsteadOfMap />
+        {/* Embedded Typeform Popup Button Section */}
+        <div id="formulario" className="mt-8 px-6 w-full flex justify-center">
+          <div className="w-full bg-card border border-border rounded-xl p-8 text-center flex flex-col items-center shadow-sm">
+            <h3 className="font-playfair text-xl text-foreground font-bold mb-4">FORMULÁRIO DE TRIAGEM</h3>
+            <p className="text-muted-foreground text-sm mb-8 leading-relaxed max-w-[280px]">
+              Clique no botão abaixo para preencher o formulário. Ele abrirá na própria tela.
+            </p>
+            <button
+              data-tf-popup="01KKFKCP9BC4WVB3Q22D4E0EW1"
+              className="inline-flex items-center justify-center rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-5 hover:opacity-90 transition-all font-bold shadow-lg w-full max-w-[320px]"
+            >
+              PREENCHER FORMULÁRIO
+            </button>
           </div>
         </div>
 

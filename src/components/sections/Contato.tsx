@@ -28,14 +28,7 @@ const mobileCarouselItems = [
   { id: 2, image: m2, title: "Clínica 2" },
   { id: 3, image: m3, title: "Clínica 3" },
   { id: 4, image: m4, title: "Clínica 4" },
-  { id: 5, image: m5, title: "Clínica 5" },
-];
-
-interface ContatoProps {
-  useTypeformInsteadOfMap?: boolean;
-}
-
-const Contato = ({ useTypeformInsteadOfMap = false }: ContatoProps = {}) => {
+const Contato = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -117,39 +110,22 @@ const Contato = ({ useTypeformInsteadOfMap = false }: ContatoProps = {}) => {
             </div>
           </div>
 
-          {/* Item 2 (Mobile Order 1): Map or Typeform */}
-          <div className="order-1 lg:order-none flex flex-col gap-2 h-[300px] lg:h-full lg:flex-[1.5]">
+          {/* Item 2 (Mobile Order 1): Map */}
+          <div className="order-1 lg:order-none flex flex-col gap-2 h-[300px] lg:h-full lg:flex-1">
             <div className="rounded-lg overflow-hidden flex-1 relative w-full h-full">
-              {useTypeformInsteadOfMap ? (
-                <div className="flex-1 w-full h-full flex flex-col items-center justify-center bg-card border border-border rounded-lg p-6 text-center">
-                  <h3 className="font-playfair text-lg text-foreground font-bold mb-4">FORMULÁRIO DE TRIAGEM</h3>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed max-w-[250px]">
-                    Preencha o nosso formulário rápido para entendermos melhor o seu caso.
-                  </p>
-                  <button
-                    data-tf-popup="01KKFKCP9BC4WVB3Q22D4E0EW1"
-                    className="inline-flex items-center justify-center rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-xs uppercase tracking-wider px-6 py-4 hover:opacity-90 transition-all font-bold shadow-sm"
-                  >
-                    ABRIR FORMULÁRIO
-                  </button>
-                </div>
-              ) : (
-                <iframe
-                  src="https://maps.google.com/maps?q=RioMar+Trade+Center+5,+Avenida+Rep%C3%BAblica+do+L%C3%ADbano,+256,+sala+720,+Pina,+Recife,+PE,+51110-160&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  className="absolute top-0 left-0 w-full h-full border-0"
-                  style={{ filter: 'invert(90%) hue-rotate(180deg)' }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Localização da Clínica Dr. Lourival Carvalho"
-                />
-              )}
+              <iframe
+                src="https://maps.google.com/maps?q=RioMar+Trade+Center+5,+Avenida+Rep%C3%BAblica+do+L%C3%ADbano,+256,+sala+720,+Pina,+Recife,+PE,+51110-160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="absolute top-0 left-0 w-full h-full border-0"
+                style={{ filter: 'invert(90%) hue-rotate(180deg)' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização da Clínica Dr. Lourival Carvalho"
+              />
             </div>
-            {!useTypeformInsteadOfMap && (
-              <p className="text-muted-foreground text-xs leading-relaxed hidden lg:block">
-                RioMar Trade Center 5 - Avenida República do Líbano, 256 - sala 720 - Pina, Recife - PE, 51110-160
-              </p>
-            )}
+            <p className="text-muted-foreground text-xs leading-relaxed hidden lg:block">
+              RioMar Trade Center 5 - Avenida República do Líbano, 256 - sala 720 - Pina, Recife - PE, 51110-160
+            </p>
           </div>
 
           {/* Item 3 (Mobile Order 3): Carousel + Stepper */}
