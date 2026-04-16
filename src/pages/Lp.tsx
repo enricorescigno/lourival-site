@@ -33,9 +33,11 @@ const Lp = () => {
       <div className="w-full max-w-md bg-background flex flex-col gap-12 pb-12 shadow-2xl relative overflow-hidden">
         
         {/* Title Section */}
-        <div className="px-6 pt-12 text-center">
-          <h1 className="font-playfair text-[2rem] leading-[1.2] tracking-tight mb-4 mx-auto w-full max-w-[320px]">
-            <span className="text-foreground">SUA CHANCE DE ALCANÇAR A </span>
+        <div className="px-6 pt-12 text-center flex flex-col items-center">
+          <h1 className="font-playfair leading-[1.1] mb-6 flex flex-col items-center justify-center w-full">
+            <span className="text-foreground block text-xl sm:text-2xl tracking-tight mb-2 whitespace-nowrap">
+              SUA CHANCE DE ALCANÇAR A
+            </span>
             <GradientText
               colors={["#F5E4AE", "#B3936C", "#A0A0A0"]}
               animationSpeed={5}
@@ -43,11 +45,13 @@ const Lp = () => {
               yoyo={true}
               pauseOnHover={false}
               showBorder={false}
-              className="font-bold inline-block"
+              className="font-bold text-4xl sm:text-5xl block"
             >
               VERSÃO IDEAL
             </GradientText>
-            <span className="text-foreground"> DO SEU CORPO</span>
+            <span className="text-foreground block text-xl sm:text-2xl tracking-tight mt-2 whitespace-nowrap">
+              DO SEU CORPO
+            </span>
           </h1>
         </div>
 
