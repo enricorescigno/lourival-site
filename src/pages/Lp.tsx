@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import GradientText from "@/components/ui/GradientText";
 import LogoLoop from "@/components/ui/LogoLoop";
-
+import Contato from "@/components/sections/Contato";
 import { Star } from "lucide-react";
 import antesMamoplastia from "@/assets/antes-mamoplastia.png";
 import depoisMamoplastia from "@/assets/depois-mamoplastia.png";
@@ -165,14 +165,11 @@ const Lp = () => {
           />
         </div>
 
-        {/* Embedded Typeform */}
-        <div id="formulario" className="mt-8 px-4 w-full">
-          <div className="w-full bg-card border border-border rounded-xl overflow-hidden shadow-2xl min-h-[600px] flex flex-col">
-            <div
-                data-tf-live="01KKFKCP9BC4WVB3Q22D4E0EW1"
-                className="flex-1 w-full h-full"
-                style={{ width: '100%', height: '100%', minHeight: '600px' }}
-            ></div>
+        {/* Embedded Form (Contato section modified via wrapper CSS to fit mobile strictly) */}
+        <div id="formulario" className="mt-8 relative [&>section]:pt-12 [&>section]:pb-8 [&>section_.max-w-7xl]:px-0">
+          {/* A tiny bit of padding injected around Contato specifically for this page so it flows nicely without the outer container constraints being broken */}
+          <div className="px-4">
+             <Contato useTypeformInsteadOfMap />
           </div>
         </div>
 
