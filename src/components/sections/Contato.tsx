@@ -28,6 +28,9 @@ const mobileCarouselItems = [
   { id: 2, image: m2, title: "Clínica 2" },
   { id: 3, image: m3, title: "Clínica 3" },
   { id: 4, image: m4, title: "Clínica 4" },
+  { id: 5, image: m5, title: "Clínica 5" },
+];
+
 const Contato = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
