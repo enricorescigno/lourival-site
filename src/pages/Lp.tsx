@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import GradientText from "@/components/ui/GradientText";
 import imagemSobre from "@/assets/Imagem_Sobre_Nos.png";
 import LogoLoop from "@/components/ui/LogoLoop";
-import { Star } from "lucide-react";
+import { Star, Check } from "lucide-react";
 import antesLipo from "@/assets/antes_lipo.png";
 import depoisLipo from "@/assets/depois_lipo.png";
 import antesMommy from "@/assets/antes_mommy.png";
@@ -106,11 +106,11 @@ const Lp = () => {
           </p>
 
           <div className="mt-4 bg-muted/30 p-6 rounded-2xl border border-border">
-            <h3 className="font-playfair text-lg text-foreground font-bold mb-4">PROCEDIMENTOS</h3>
+            <h3 className="font-playfair text-lg text-foreground font-bold mb-4">ESPECIALIDADES</h3>
             <ul className="grid grid-cols-1 gap-y-3 text-left w-fit mx-auto">
               {procedimentosList.map((p, j) => (
                 <li key={j} className="text-foreground text-sm flex items-center gap-3">
-                  <span className="w-2 h-2 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] flex-shrink-0" />
+                  <Check size={16} className="text-[#B3936C] flex-shrink-0" strokeWidth={3} />
                   <span className="uppercase tracking-wide">{p}</span>
                 </li>
               ))}
@@ -128,12 +128,16 @@ const Lp = () => {
           >
             INICIE SEU ATENDIMENTO
           </a>
-          <a 
-            href="#formulario" 
+          <button 
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="text-xs text-muted-foreground underline decoration-muted-foreground/30 underline-offset-4 hover:text-primary transition-colors mt-2"
           >
             se preferir preencha o formulário
-          </a>
+          </button>
         </div>
 
         {/* Testimonials Segment */}
@@ -181,9 +185,9 @@ const Lp = () => {
         {/* Embedded Typeform Popup Button Section */}
         <div id="formulario" className="mt-8 px-6 w-full flex justify-center">
           <div className="w-full bg-card border border-border rounded-xl p-8 text-center flex flex-col items-center shadow-sm">
-            <h3 className="font-playfair text-xl text-foreground font-bold mb-4">FORMULÁRIO DE TRIAGEM</h3>
+            <h3 className="font-playfair text-xl text-foreground font-bold mb-4 uppercase">PREENCHA O FORMULÁRIO</h3>
             <p className="text-muted-foreground text-sm mb-8 leading-relaxed max-w-[280px]">
-              Clique no botão abaixo para preencher o formulário. Ele abrirá na própria tela.
+              Clique no botão abaixo para realizar a triagem online. Leva menos de 2 minutos.
             </p>
             <button
               data-tf-popup="wR0BZEhR"
