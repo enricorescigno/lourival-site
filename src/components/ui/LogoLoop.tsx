@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 
 interface LogoLoopItem {
-    text: string;
+    text?: string;
     boldText?: string;
+    content?: React.ReactNode;
 }
 
 interface LogoLoopProps {
@@ -104,8 +105,12 @@ const LogoLoop: React.FC<LogoLoopProps> = ({
                         className={`inline-block transition-transform duration-300 ${scaleOnHover ? "hover:scale-110" : ""
                             } ${textClassName}`}
                     >
-                        {item.text}
-                        {item.boldText && <span className="font-bold"> {item.boldText}</span>}
+                        {item.content ? item.content : (
+                            <>
+                                {item.text}
+                                {item.boldText && <span className="font-bold"> {item.boldText}</span>}
+                            </>
+                        )}
                     </span>
                 ))}
             </div>
