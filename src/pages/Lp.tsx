@@ -34,8 +34,8 @@ const Lp = () => {
         
         {/* Title Section */}
         <div className="px-6 pt-12 text-center">
-          <h1 className="font-playfair text-3xl leading-[1.3] mb-4">
-            <span className="text-foreground block mb-2 text-2xl">SUA CHANCE DE ALCANÇAR A </span>
+          <h1 className="font-playfair text-[2rem] leading-[1.2] tracking-tight mb-4 mx-auto w-full max-w-[320px]">
+            <span className="text-foreground">SUA CHANCE DE ALCANÇAR A </span>
             <GradientText
               colors={["#F5E4AE", "#B3936C", "#A0A0A0"]}
               animationSpeed={5}
@@ -43,11 +43,11 @@ const Lp = () => {
               yoyo={true}
               pauseOnHover={false}
               showBorder={false}
-              className="font-bold text-4xl block"
+              className="font-bold inline-block"
             >
               VERSÃO IDEAL
             </GradientText>
-            <span className="text-foreground block mt-2 text-2xl"> DO SEU CORPO</span>
+            <span className="text-foreground"> DO SEU CORPO</span>
           </h1>
         </div>
 
