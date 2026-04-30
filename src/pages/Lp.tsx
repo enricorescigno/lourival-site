@@ -121,7 +121,7 @@ const Lp = () => {
         {/* CTA Buttons */}
         <div className="px-6 flex flex-col items-center gap-4 mt-2">
           <a
-            href="https://wa.me/5581994401032?text=Gostaria%20de%20iniciar%20meu%20atendimento"
+            href="https://wa.me/5581994073833?text=Gostaria%20de%20iniciar%20meu%20atendimento"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full max-w-[320px] inline-flex items-center justify-center rounded-[20px] bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black font-montserrat text-sm uppercase tracking-wider px-8 py-5 hover:opacity-90 transition-all font-bold shadow-lg"

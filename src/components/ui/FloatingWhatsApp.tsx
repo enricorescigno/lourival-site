@@ -13,7 +13,7 @@ const FloatingWhatsApp = () => {
         }
       `}</style>
       <a
-        href="https://wa.me/5581994401032?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Lourival%20Carvalho."
+        href="https://wa.me/5581994073833?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Lourival%20Carvalho."
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-14 h-14 bg-[radial-gradient(50%_50%_at_50%_50%,#F5E4AE_0%,#B3936C_100%)] text-black rounded-full shadow-lg"
