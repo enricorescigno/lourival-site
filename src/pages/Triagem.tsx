@@ -5,6 +5,21 @@ import logo from "@/assets/Logo_Lourival_Carvalho.png";
 
 const Triagem = () => {
     useEffect(() => {
+        // Inject the Google Tag (gtag.js) script
+        const gTagScript = document.createElement("script");
+        gTagScript.src = "https://www.googletagmanager.com/gtag/js?id=AW-17399649883";
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        const gTagConfigScript = document.createElement("script");
+        gTagConfigScript.innerHTML = `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-17399649883');
+        `;
+        document.head.appendChild(gTagConfigScript);
+
         // Inject the Typeform script
         const script = document.createElement("script");
         script.src = "//embed.typeform.com/next/embed.js";
@@ -13,7 +28,15 @@ const Triagem = () => {
 
         return () => {
             // Cleanup script on unmount
-            document.body.removeChild(script);
+            if (document.head.contains(gTagScript)) {
+                document.head.removeChild(gTagScript);
+            }
+            if (document.head.contains(gTagConfigScript)) {
+                document.head.removeChild(gTagConfigScript);
+            }
+            if (document.body.contains(script)) {
+                document.body.removeChild(script);
+            }
         };
     }, []);
 
